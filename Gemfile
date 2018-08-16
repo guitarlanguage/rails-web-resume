@@ -32,6 +32,10 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+# reset.css
+#gem 'meyer-css-reset-rails', '~> 3.2.12'
+#gem 'normalize-rails'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
