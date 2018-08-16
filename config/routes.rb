@@ -4,4 +4,11 @@ Rails.application.routes.draw do
   root 'pages#home'
 
   get '/portfolio' => 'pages#portfolio'
+
+  get '/messages' => 'messages#index'
+
+  get '/messages/new' => 'messages#new', as: :new_message
+
+
+  post 'messages' => 'messages#create'
 end
