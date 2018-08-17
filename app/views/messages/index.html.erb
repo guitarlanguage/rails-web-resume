@@ -1,0 +1,13 @@
+
+<section class="main-section">
+    <% @messages.each do |message| %> 
+        <div class="message">
+            <p class='name'>Name: <%= message.name %> 
+            <p class='email'>Email: <%= message.email %> 
+            <p class="content">Message: <%= message.content %></p> 
+            <p class="time">created at: <%= message.created_at.strftime("%b %d, %Y, @%I:%M %p") %></p> 
+            <hr>
+        </div> 
+    <% end %>
+    <%= link_to 'New Message', "messages/new" %>
+</section>
