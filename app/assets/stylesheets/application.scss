@@ -17,6 +17,7 @@
  *= require_self
 
  */
+
 /* // Place all the styles related to the Pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
@@ -24,6 +25,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/ */
 
+$break-tablet: 980px;
+$break-ipad:768px;
+$break-phone:640px;
 body {
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
     /* Typography */
@@ -57,6 +61,28 @@ body {
     margin: 0 auto -100px;
 }
 
+/* header */
+
+#masthead {
+    position: fixed;
+    z-index: 99;
+    /* Box-model */
+    width: 100%;
+    /* Positioning */
+    margin: 0 0 30px;
+    overflow: auto;
+    /* Typography */
+    color: #fff;
+    background: #fff;
+    /* Visual */
+    border-bottom: 2px solid #ccc;
+    @media screen and (max-width: $break-phone) {
+        /* Positioning */
+        position: static;
+        margin-bottom: 20px;
+    }
+}
+
 .container {
     /* Box-model */
     width: 100%;
@@ -64,6 +90,11 @@ body {
     /* Positioning */
     margin: 0 auto;
     clear: both;
+    @media screen and (max-width: $break-tablet) {
+        max-width: 768px;
+        /* Box-model */
+        padding: 0 20px;
+    }
 }
 
 h1,
@@ -101,23 +132,6 @@ h3 {
     font-size: 22px;
 }
 
-/* header */
-
-#masthead {
-    position: fixed;
-    z-index: 99;
-    /* Box-model */
-    width: 100%;
-    /* Positioning */
-    margin: 0 0 30px;
-    overflow: auto;
-    /* Typography */
-    color: #fff;
-    background: #fff;
-    /* Visual */
-    border-bottom: 2px solid #ccc;
-}
-
 #logo {
     float: left;
     /* Box-model */
@@ -133,6 +147,9 @@ h3 {
     text-decoration: none;
     /* Visual */
     background: #4aaaa5;
+    @media screen and (max-width: $break-phone) {
+        width: 100%;
+    }
 }
 
 nav {
@@ -140,37 +157,48 @@ nav {
     float: right;
     /* Positioning */
     margin-top: 25px;
-}
-
-nav li {
-    display: inline-block;
-    /* Box-model */
-    padding-left: 15px;
-    /* Positioning */
-    margin-left: 15px;
-    /* Typography */
-    line-height: 18px;
-    /* Visual */
-    border-left: 1px solid #efefef;
-}
-
-nav a {
-    /* Typography */
-    color: #999;
-    text-decoration: none;
-}
-
-nav a:hover {
-    color: #666;
-}
-
-nav li:first-child {
-    /* Box-model */
-    padding-left: 0;
-    /* Positioning */
-    margin-left: 0;
-    /* Visual */
-    border-left: 0 none;
+    li {
+        display: inline-block;
+        /* Box-model */
+        padding-left: 15px;
+        /* Positioning */
+        margin-left: 15px;
+        /* Typography */
+        line-height: 18px;
+        /* Visual */
+        border-left: 1px solid #efefef;
+    }
+    li:first-child {
+        /* Box-model */
+        padding-left: 0;
+        /* Positioning */
+        margin-left: 0;
+        /* Visual */
+        border-left: 0 none;
+    }
+    a {
+        /* Typography */
+        color: #999;
+        text-decoration: none;
+        @media screen and (max-width: $break-phone) {
+            /* Box-model */
+            width: 30%;
+            padding-left: 0;
+            /* Positioning */
+            margin-left: 0;
+        }
+    }
+    a:hover {
+        color: #666;
+    }
+    @media screen and (max-width: $break-phone) {
+        /* Box-model */
+        width: 100%;
+        /* Positioning */
+        margin: 15px 0;
+        /* Typography */
+        text-align: center;
+    }
 }
 
 /* footer */
@@ -207,10 +235,38 @@ footer {
     background: #fff;
     /* Visual */
     border: 1px solid #ddd;
+    h2 {
+        /* Box-model */
+        padding-bottom: 20px;
+        /* Positioning */
+        margin-bottom: 15px;
+        /* Typography */
+        line-height: 22px;
+        /* Visual */
+        border-bottom: 2px solid #eee;
+    }
+    li {
+        /* Box-model */
+        float: left;
+        width: 62px;
+        height: 62px;
+        /* Positioning */
+        margin-top: 8px;
+        margin-right: 10px;
+        list-style-type: none;
+    }
+    li:last-child {
+        margin-right: 0;
+    }
+    img {
+        max-width: 100%;
+    }
+    @media screen and (max-width: $break-ipad) {
+        margin-bottom: 40px;
+    }
 }
 
-h3,
-.sidebar h2 {
+h3 {
     /* Box-model */
     padding-bottom: 20px;
     /* Positioning */
@@ -221,29 +277,13 @@ h3,
     border-bottom: 2px solid #eee;
 }
 
-.sidebar li {
-    /* Box-model */
-    float: left;
-    width: 62px;
-    height: 62px;
-    /* Positioning */
-    margin-top: 8px;
-    margin-right: 10px;
-    list-style-type: none;
-}
-
-.sidebar img {
-    max-width: 100%;
-}
-
-.sidebar li:last-child {
-    margin-right: 0;
-}
-
 /* main */
 
 main {
     padding-top: 130px;
+    @media screen and (max-width: $break-ipad) {
+        overflow: auto;
+    }
 }
 
 .main-section {
@@ -257,6 +297,12 @@ main {
     background: #fff;
     /* Visual */
     border: 1px solid #ddd;
+    @media screen and (max-width: $break-tablet) {
+        max-width: 420px;
+    }
+    @media screen and (max-width: $break-ipad) {
+        max-width: 100%;
+    }
 }
 
 /* portfolio page */
@@ -269,48 +315,76 @@ main {
     width: 274px;
     margin: 20px 0 25px;
     overflow: auto;
+    img {
+        /* Box-model */
+        width: 100%;
+        height: 100%;
+        /* Visual */
+        border: 0 none;
+        /* Misc */
+        opacity: 0.8;
+    }
+    h3 {
+        /* Positioning */
+        position: absolute;
+        bottom: 20px;
+        width: 100%;
+        /* Box-model */
+        padding: 15px;
+        margin-bottom: 0;
+        font-weight: 300;
+        line-height: 30px;
+        /* Typography */
+        color: #fff;
+        text-align: center;
+        background: #4aaaa5;
+        /* Visual */
+        border-bottom: 0;
+    }
+    .auth-image {
+        float: left;
+        /* Box-model */
+        width: 200px;
+        height: auto;
+        margin-top: 10px;
+        /* Positioning */
+        margin-right: 25px;
+        @media screen and (max-width: $break-tablet) {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        @media screen and (max-width: $break-ipad) {
+            width: 50%;
+        }
+        @media screen and (max-width: $break-phone) {
+            width: 100%;
+        }
+    }
+    @media screen and (max-width: $break-tablet) {
+        width: 100%;
+    }
+    @media screen and (max-width: $break-ipad) {
+        /* Box-model */
+        width: 47%;
+        /* Positioning */
+        margin-bottom: 10px;
+    }
+    @media screen and (max-width: $break-phone) {
+        width: 100%;
+    }
 }
 
 .work:nth-child(even) {
     margin-right: 40px;
+    @media screen and (max-width: $break-ipad) {
+        margin-right: 0;
+    }
 }
 
-.work img {
-    /* Box-model */
-    width: 100%;
-    height: 100%;
-    /* Visual */
-    border: 0 none;
-    /* Misc */
-    opacity: 0.8;
-}
-
-.work h3 {
-    /* Positioning */
-    position: absolute;
-    bottom: 20px;
-    width: 100%;
-    /* Box-model */
-    padding: 15px;
-    margin-bottom: 0;
-    font-weight: 300;
-    line-height: 30px;
-    /* Typography */
-    color: #fff;
-    text-align: center;
-    background: #4aaaa5;
-    /* Visual */
-    border-bottom: 0;
-}
-
-.auth-image {
-    float: left;
-    /* Box-model */
-    width: 200px;
-    height: auto;
-    margin-top: 10px;
-    /* Positioning */
-    margin-right: 25px;
+@media screen and (max-width: $break-ipad) {
+    .work:nth-child(odd) {
+        float: right;
+    }
 }
 
 /* contact page */
@@ -359,6 +433,15 @@ input[type=submit] {
     background: #4aaaa5;
     /* Visual */
     border: 0 none;
+}
+
+@media screen and (max-width: $break-phone) {
+    header .container {
+        padding: 0;
+    }
+    main.container {
+        padding-top: 0;
+    }
 }
 
 @media only screen and (max-width: 980px) {
