@@ -10,12 +10,8 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
-
-
-
  *= require_tree .
  *= require_self
-
  */
 
 /* // Place all the styles related to the Pages controller here.
@@ -264,6 +260,9 @@ footer {
     @media screen and (max-width: $break-ipad) {
         margin-bottom: 40px;
     }
+    @media screen and (max-width: $break-phone) {
+        margin-right: 10%;
+    }
 }
 
 h3 {
@@ -297,6 +296,10 @@ main {
     background: #fff;
     /* Visual */
     border: 1px solid #ddd;
+    img {
+        float: left;
+        margin-right: 15px;
+    }
     @media screen and (max-width: $break-tablet) {
         max-width: 420px;
     }
