@@ -4,49 +4,35 @@
     <h1>Portfolio</h1>
 
     <div class="work">
-        <a href="https://greenboots.herokuapp.com/" target="_blank">
-        <%=link_to image_tag("greenboots.jpeg", border: 0), {action: 'portfolio', controller: 'pages'}%>
-            
-            <h3>Greenboots</h3>
-        </a>
+        <%=link_to image_tag("greenboots.jpeg", border: 0), "https://greenboots.herokuapp.com/" %>  
+        <h3>Greenboots</h3>
     </div>
 
     <div class="work">
-        <a href="https://safe-depths-69458.herokuapp.com/" target="_blank">
-        <%=link_to image_tag("burger640.jpeg", border: 0), {action: 'portfolio', controller: 'pages'}%>
-            
-            <h3>Burger Mania</h3>
-        </a>
+        <%=link_to image_tag("burger640.jpeg", border: 0), "https://safe-depths-69458.herokuapp.com/"%>
+        <h3>Burger Mania</h3>
     </div>
 
-    <div class="work">
-        <a href="https://jolly-jackson-7f1733.netlify.com/" target="_blank">
-            
-            <%=link_to image_tag("pMemory.jpeg", border: 0), {action: 'portfolio', controller: 'pages'}%>
+    <div class="work">      
+            <%=link_to image_tag("pMemory.jpeg", border: 0), "https://jolly-jackson-7f1733.netlify.com/"%>
             <h3>Picture Your Memory</h3>
-        </a>
+    </div>
+
+
+
+    <!--<div class="work">          
+        <%=link_to image_tag("nhlScrape.jpeg", border: 0), "https://mongggo-scrape.herokuapp.com/"%>
+        <h3>NHL Scrap'n The Ice</h3>
+    </div>-->
+
+    <div class="work">      
+        <%=link_to image_tag("galacticFish.jpeg", border: 0), "https://guitarlanguage.github.io/GalacticFish/"%>
+        <h3>Galactic Fish</h3>
     </div>
 
     <div class="work">
-        <a href="https://ccbcstatistics.herokuapp.com/" target="_blank">
-            
-            <%=link_to image_tag("ccb640.jpeg", border: 0), {action: 'portfolio', controller: 'pages'}%>
-            <h3>CCBC Statistics</h3>
-        </a>
-    </div>
-    <div class="work">
-        <a href="https://mongggo-scrape.herokuapp.com/" target="_blank">
-            
-            <%=link_to image_tag("nhlScrape.jpeg", border: 0), {action: 'portfolio', controller: 'pages'}%>
-            <h3>NHL Scrap'n The Ice</h3>
-        </a>
-    </div>
-
-    <div class="work">
-        <a href="https://guitarlanguage.github.io/GalacticFish/" target="_blank">
-            
-            <%=link_to image_tag("galacticFish.jpeg", border: 0), {action: 'portfolio', controller: 'pages'}%>
-            <h3>Galactic Fish</h3>
+            <%=link_to image_tag("ccb640.jpeg", border: 0),"https://ccbcstatistics.herokuapp.com/"%>
+            <h3>CCBC Statistics</h3>    
     </div>
 
 </section>
