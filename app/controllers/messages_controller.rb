@@ -11,8 +11,10 @@ class MessagesController < ApplicationController
     def create
         @message = Message.new(message_params)
         if @message.save
-            redirect_to '/messages'
+            flash[:success] = "Thank you for submitting your message"
+            redirect_to '/'
         else
+            flash.now[:danger] = 'Please provide your name, email, and message.  Thank you' # Not quite right!
             render 'new'
         end
     end

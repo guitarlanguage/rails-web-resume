@@ -13,6 +13,9 @@
     <div class="wrapper">
       <%= render 'layouts/header' %>
         <main class="container">
+          <% flash.each do |message_type, message| %>
+            <div class="alert"><%= message %></div>
+          <% end %>
           <%= yield %>
           <%= render 'layouts/sidebar' %>
         </main>
