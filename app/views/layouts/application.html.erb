@@ -12,15 +12,16 @@
   <body>
     <div class="wrapper">
       <%= render 'layouts/header' %>
-        <main class="container">
-          <% flash.each do |message_type, message| %>
-            <div class="alert"><%= message %></div>
-          <% end %>
-          <%= yield %>
-          <%= render 'layouts/sidebar' %>
-        </main>
-        <div class="push"></div>
-        <%= render 'layouts/footer' %>
+      <main class="container">
+        <% flash.each do |message_type, message| %>
+          <div class="alert"><%= message %></div>
+        <% end %>
+        <%= yield %>
+        <%= render 'layouts/sidebar' %>
+      </main>
     </div>
+    <div class="push"></div>
+    <%= render 'layouts/footer' %>
+    
   </body>
 </html>

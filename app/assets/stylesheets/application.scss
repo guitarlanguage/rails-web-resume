@@ -24,6 +24,7 @@
 $break-tablet: 980px;
 $break-ipad: 768px;
 $break-phone: 640px;
+$break-mini-phone: 480px;
 body {
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
   /* Typography */
@@ -231,12 +232,13 @@ footer,
   height: 100px;
 }
 
-footer {
+#footer {
   /* Box-model */
   padding: 30px 0;
   /* Positioning */
   clear: both;
   font-size: 12px;
+  margin-top: -50px;
   /* Typography */
   color: #ccc;
   text-align: center;
@@ -284,11 +286,21 @@ footer {
   img {
     max-width: 100%;
   }
+  @media screen and (max-width: $break-tablet) {
+    margin-bottom: 40px;
+    margin-top: 20%;
+  }
   @media screen and (max-width: $break-ipad) {
     margin-bottom: 40px;
+    margin-top: 20%;
   }
   @media screen and (max-width: $break-phone) {
-    margin-right: 10%;
+    max-width: 100%;
+    margin-top: 5%;
+    margin-bottom: 12%;
+  }
+  @media screen and (max-width: $break-phone) {
+    margin-bottom: 20%;
   }
 }
 
@@ -329,9 +341,17 @@ main {
   }
   @media screen and (max-width: $break-tablet) {
     max-width: 420px;
+    margin-top: 20%;
   }
   @media screen and (max-width: $break-ipad) {
+    max-width: 60%;
+    margin-top: 20%;
+    margin-bottom: 12%;
+  }
+  @media screen and (max-width: $break-phone) {
     max-width: 100%;
+    margin-top: 5%;
+    margin-bottom: 0;
   }
 }
 
